@@ -35,7 +35,7 @@
                         $(document).ready(function() {
                                 oTable = $('#example').dataTable({
                                         "oLanguage": {
-                                            "sUrl": "./languages/datatables.<?php echo $language; ?>.txt"
+                                            "sUrl": "languages/datatables.<?php echo $language; ?>.txt"
                                         },
                                         "bJQueryUI": true,
                                         "sPaginationType": "full_numbers"
@@ -51,7 +51,7 @@
          <p style="color:red"><?php
                  if(isset($_GET['error'])) {
         if($_GET['error']==1){
-                echo $lang['myitems']['not_owner']"You do not own that item.";
+                echo $lang['myitems']['not_owner'];
         }}
 
 ?></p>

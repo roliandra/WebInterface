@@ -1,11 +1,5 @@
 <?php
 
-/* Language config */
-
-$language = 'en'; //which language should be used to display
-
-require 'languages/'.$language.'.php';  //load the language file
-
 /* Database config */
 
 $db_host                = 'mywebsite.com'; //change these!!
@@ -55,6 +49,12 @@ $consumerKey = "";
 $consumerSecret = "";
 $accessToken = "";
 $accessTokenSecret = "";
+
+/* Language config */
+
+$language = 'en'; //which language should be used to display
+
+require dirname (__FILE__).'/../languages/'.$language.'.php';  //load the language file
 
 /* End config */
 

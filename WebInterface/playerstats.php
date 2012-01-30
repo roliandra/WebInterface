@@ -35,7 +35,7 @@
       $(document).ready(function() {
         oTable = $('#example').dataTable({
           "oLanguage": {
-             "sUrl": "./languages/datatables.<?php echo $language; ?>.txt"
+             "sUrl": "languages/datatables.<?php echo $language; ?>.txt"
           },
           "bJQueryUI": true,
           "sPaginationType": "full_numbers"

@@ -14,7 +14,7 @@
       <h1><?php echo $lang['login']['pagetitle']; ?></h1>
       <p>&nbsp;</p>
       <div id="login-box">
-        <h2><?php echo $lang['login']['subtitle']; ?>Login</h2>
+        <h2><?php echo $lang['login']['subtitle']; ?></h2>
         <p style="color:red">
 <?php
         if(isset($_GET['error'])) {

@@ -40,7 +40,7 @@
                         $(document).ready(function() {
                                 oTable = $('#example').dataTable({
                                         "oLanguage": {
-                                            "sUrl": "./languages/datatables.<?php echo $language; ?>.txt"
+                                            "sUrl": "languages/datatables.<?php echo $language; ?>.txt"
                                         },
                                         "bJQueryUI": true,
                                         "sPaginationType": "full_numbers",
@@ -74,7 +74,7 @@
                 <?php include("topBoxes.php"); ?>
                 <h1><?php echo $lang['transactionLog']['pagetitle']; ?></h1>
                 <br/>
-                <h2><?php echo $lang['transactionLog']['subtitle_buy']; ?>My Items Bought</h2>
+                <h2><?php echo $lang['transactionLog']['subtitle_buy']; ?></h2>
 
 
           <div class="demo_jui">
@@ -86,7 +86,7 @@
                         <th><?php echo $lang['transactionLog']['th_seller']; ?></th>
             <th><?php echo $lang['transactionLog']['th_quantity']; ?></th>
             <th><?php echo $lang['transactionLog']['th_priceeach']; ?></th>
-                        <th><?php echo $lang['transactionLog']['th_pricetotale']; ?></th>
+                        <th><?php echo $lang['transactionLog']['th_pricetotal']; ?></th>
                         <th><?php echo $lang['transactionLog']['th_marketprice']; ?></th>
                 </tr>
         </thead>
@@ -145,7 +145,7 @@
     <?php } ?>
         </tbody>
 </table>
-        <h2><?php echo $lang['transactionLog']['subtitle_sold']; ?>My Items Sold</h2>
+        <h2><?php echo $lang['transactionLog']['subtitle_sold']; ?></h2>
 
         </div>
           <div class="demo_jui">
