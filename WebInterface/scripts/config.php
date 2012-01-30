@@ -2,7 +2,7 @@
 
 /* Language config */
 
-$language = 'en' //which language should be used to display
+$language = 'en'; //which language should be used to display
 
 require '../languages/'.$language.'.php';  //load the language file
 
