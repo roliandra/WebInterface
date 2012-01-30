@@ -251,7 +251,10 @@
                         }
                         $player->buyItem($buyQuantity);
                         $owner->sellItem($buyQuantity);
-            $_SESSION['success'] = $lang['purchaseItem']['buy_success'];
+                        $_SESSION['success'] = str_replace(
+                            array('#buyQuantity#','#auctionFullname#','#auctionOwner#','#totalPrice#'),
+                            array($buyQuantity,$auction->fullname,$auction->owner, $currencyPrefix.$totalPrice.$currencyPostfix),
+                            $lang['purchaseItem']['buy_success']);
                         if ($toDelete){
                                 $auction->delete();
                         }

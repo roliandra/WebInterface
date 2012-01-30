@@ -119,11 +119,14 @@
                                                                         $updateEnch = mysql_query("INSERT INTO WA_EnchantLinks (enchId, itemTableId, itemId) VALUES ('$enchIdk', '1', '$latestId')");
                                                                 }
 
-                                                                $_SESSION['success'] = $lang['newAuction']['success'];
+                                                                $_SESSION['success'] = str_replace(
+                                                                           array('#sellQuantity#','#itemFullName#','#sellPrice#','#itemFee#'),
+                                                                           array($sellQuantity,$itemFullName,$currencyPrefix.$sellPrice.$currencyPostfix,$currencyPrefix.$itemFee.$currencyPostfix),
+                                                                           $lang['newAuction']['success']);
                                                                 header("Location: ../myauctions.php");
                                                         }else
                                                         {
-                                                        $_SESSION['error'] = $lang['newAuction']['error'];
+                                                        $_SESSION['error'] = str_replace('#itemFee#',$currencyPrefix.$itemFee.$currencyPostfix,$lang['newAuction']['error']);
                                                         header("Location: ../myauctions.php");
                                                         }
                                                 }else
