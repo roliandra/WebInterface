@@ -4,7 +4,7 @@
 
 $language = 'en'; //which language should be used to display
 
-require '../languages/'.$language.'.php';  //load the language file
+require 'languages/'.$language.'.php';  //load the language file
 
 /* Database config */
 
