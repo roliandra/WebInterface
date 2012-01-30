@@ -9,32 +9,32 @@
 <?php
 // TODO: printf();
 // TODO: get rid of table for formating, use css instead
-	if ($useMySQLiConomy) {
+        if ($useMySQLiConomy) {
 ?>
 Money: &nbsp;
 <?php
-		echo $currencyPrefix.$iConRow['2'].$currencyPostfix;
+                echo $currencyPrefix.$iConRow['2'].$currencyPostfix;
 ?>
 <br />
 <?php
-	} else {
+        } else {
 ?>
 Money: &nbsp;
 <?php
-	echo $currencyPrefix.$playerRow['3'].$currencyPostfix;;
+        echo $currencyPrefix.$playerRow['3'].$currencyPostfix;;
 ?>
 <br />
 <?php
-	}
+        }
 ?>
 Mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <?php
-	echo $mailCount;
+        echo $mailCount;
 ?>
 <br />
 <?php
-	echo date('jS M Y H:i:s');
-?> 
+        echo date('jS M Y H:i:s');
+?>
 <br />
         </p>
       </td>
@@ -43,12 +43,12 @@ Mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 <div id="link-box">
   <p>
-    <a href="index.php">Home</a><br />
-    <a href="myitems.php">My Items</a><br />
-    <a href="myauctions.php">My Auctions</a><br />
-	<a href="playerstats.php">Player Stats</a><br />
-    <a href="info.php">Item Info</a><br />
-    <a href="transactionLog.php">Transaction Log</a><br />
-    <a href="logout.php">Logout</a>
+    <a href="index.php"><?php echo $lang['topBoxes']['link']['home']; ?></a><br />
+    <a href="myitems.php"><?php echo $lang['topBoxes']['link']['myitems']; ?></a><br />
+    <a href="myauctions.php"><?php echo $lang['topBoxes']['link']['myauctions']; ?></a><br />
+        <a href="playerstats.php"><?php echo $lang['topBoxes']['link']['playerstats']; ?></a><br />
+    <a href="info.php"><?php echo $lang['topBoxes']['link']['iteminfo']; ?></a><br />
+    <a href="transactionLog.php"><?php echo $lang['topBoxes']['link']['transactionlog']; ?></a><br />
+    <a href="logout.php"><?php echo $lang['topBoxes']['link']['logout']; ?></a>
   </p>
 </div>

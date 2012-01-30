@@ -1,17 +1,22 @@
 <?php
 
+/* Language config */
+
+$language = 'en' //which language should be used to display
+
+require '../languages/'.$language.'.php';  //load the language file
 
 /* Database config */
 
-$db_host		= 'mywebsite.com'; //change these!!
-$db_user		= 'username';//change these!!
-$db_pass		= 'password1234';//change these!!
-$db_database	= 'minecraft'; //change these!!
+$db_host                = 'mywebsite.com'; //change these!!
+$db_user                = 'username';//change these!!
+$db_pass                = 'password1234';//change these!!
+$db_database        = 'minecraft'; //change these!!
 
 /* Market Price config */
 
 $maxSellPrice = 10000; //this is per item
-$marketDaysMin	= 30; //number of past days to take the average of the sales for to work out market price (bigger number for smaller servers)
+$marketDaysMin        = 30; //number of past days to take the average of the sales for to work out market price (bigger number for smaller servers)
 
 /* Design config */
 
@@ -57,7 +62,7 @@ $currencyPostfix = " ".$currencyPostfix;
 $marketTimeMin = $marketDaysMin * 86400;
 $auctionDurationSec = $auctionLength * 86400;
 $link = mysql_connect($db_host,$db_user,$db_pass);
-if (!$link){die("Unable to connect to database".mysql_error());}
+if (!$link){die($lang['config']['db']['no_connection'].mysql_error());}
 
 mysql_select_db($db_database,$link);
 mysql_query("SET names UTF8");

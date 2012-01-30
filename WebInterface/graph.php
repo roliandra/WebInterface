@@ -1,36 +1,36 @@
 <?php
-	session_start();
-	if (!isset($_SESSION['User'])) {
-		header("Location: login.php");
-	}
-	$user = $_SESSION['User'];
-	require 'scripts/config.php';
-	require 'scripts/itemInfo.php';
-	$isAdmin = $_SESSION['Admin'];
-	$queryAuctions = mysql_query("SELECT * FROM WA_Auctions");
-	$itemName = mysql_real_escape_string(stripslashes($_POST['Name']));
-	$itemDamage = mysql_real_escape_string(stripslashes($_POST['Damage']));
-	
-	$itemFullName = getItemName($itemName, $itemDamage);
-	if ($useMySQLiConomy) {
-		$queryiConomy = mysql_query("SELECT * FROM $iConTableName WHERE username='$user'");
-		$iConRow = mysql_fetch_row($queryiConomy);
-	}
-	$queryMarket = mysql_query("SELECT * FROM WA_MarketPrices WHERE name='$itemName' AND damage='$itemDamage'"); 
-	$jsArrayString = "[";
-	while (list($id, $name, $damage, $time, $price, $ref) = mysql_fetch_row($queryMarket)) {
-		if (strlen($jsArrayString) > 3) {
-			$jsArrayString = $jsArrayString . ",";
-		}
-		$jsArrayString = $jsArrayString . "[";
-		$jsArrayString = $jsArrayString . date("\"m/d/Y H:i:s\"",$time) . "," . $price;
-		$jsArrayString = $jsArrayString . "]";
-	}
-	$jsArrayString = $jsArrayString . "]";
-	$playerQuery = mysql_query("SELECT * FROM WA_Players WHERE name='$user'");
-	$playerRow = mysql_fetch_row($playerQuery);
-	$mailQuery = mysql_query("SELECT * FROM WA_Mail WHERE player='$user'");
-	$mailCount = mysql_num_rows($mailQuery);
+        session_start();
+        if (!isset($_SESSION['User'])) {
+                header("Location: login.php");
+        }
+        $user = $_SESSION['User'];
+        require 'scripts/config.php';
+        require 'scripts/itemInfo.php';
+        $isAdmin = $_SESSION['Admin'];
+        $queryAuctions = mysql_query("SELECT * FROM WA_Auctions");
+        $itemName = mysql_real_escape_string(stripslashes($_POST['Name']));
+        $itemDamage = mysql_real_escape_string(stripslashes($_POST['Damage']));
+
+        $itemFullName = getItemName($itemName, $itemDamage);
+        if ($useMySQLiConomy) {
+                $queryiConomy = mysql_query("SELECT * FROM $iConTableName WHERE username='$user'");
+                $iConRow = mysql_fetch_row($queryiConomy);
+        }
+        $queryMarket = mysql_query("SELECT * FROM WA_MarketPrices WHERE name='$itemName' AND damage='$itemDamage'");
+        $jsArrayString = "[";
+        while (list($id, $name, $damage, $time, $price, $ref) = mysql_fetch_row($queryMarket)) {
+                if (strlen($jsArrayString) > 3) {
+                        $jsArrayString = $jsArrayString . ",";
+                }
+                $jsArrayString = $jsArrayString . "[";
+                $jsArrayString = $jsArrayString . date("\"m/d/Y H:i:s\"",$time) . "," . $price;
+                $jsArrayString = $jsArrayString . "]";
+        }
+        $jsArrayString = $jsArrayString . "]";
+        $playerQuery = mysql_query("SELECT * FROM WA_Players WHERE name='$user'");
+        $playerRow = mysql_fetch_row($playerQuery);
+        $mailQuery = mysql_query("SELECT * FROM WA_Mail WHERE player='$user'");
+        $mailCount = mysql_num_rows($mailQuery);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -97,7 +97,7 @@
   <body>
     <div id="holder">
       <?php include("topBoxes.php"); ?>
-      <h1>Web Auction</h1>
+      <h1><?php echo $lang['graph']['pagetitle']; ?></h1>
       <br/>
       </p> <!-- ??? -->
       <div id="chart1" style="height:400px; width:850px; margin:10px;"></div>
