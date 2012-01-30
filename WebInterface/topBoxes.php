@@ -5,13 +5,13 @@
         <img width="64px" src="http://minotar.net/avatar/<?php echo $user ?>" />
       </td>
       <td>
-        <p>Name: &nbsp;&nbsp;<?php echo $user?><?php if ($isAdmin == "true"){ echo " ADMIN"; } ?><br/>
+        <p><?php echo $lang['topBoxes']['head']['name']; ?>: &nbsp;&nbsp;<?php echo $user?><?php if ($isAdmin == "true"){ echo " ADMIN"; } ?><br/>
 <?php
 // TODO: printf();
 // TODO: get rid of table for formating, use css instead
         if ($useMySQLiConomy) {
 ?>
-Money: &nbsp;
+<?php echo $lang['topBoxes']['head']['money']; ?>: &nbsp;
 <?php
                 echo $currencyPrefix.$iConRow['2'].$currencyPostfix;
 ?>
@@ -19,7 +19,7 @@ Money: &nbsp;
 <?php
         } else {
 ?>
-Money: &nbsp;
+<?php echo $lang['topBoxes']['head']['money']; ?>: &nbsp;
 <?php
         echo $currencyPrefix.$playerRow['3'].$currencyPostfix;;
 ?>
@@ -27,7 +27,7 @@ Money: &nbsp;
 <?php
         }
 ?>
-Mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<?php echo $lang['topBoxes']['head']['mail']; ?>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <?php
         echo $mailCount;
 ?>
