@@ -109,6 +109,7 @@ $lang['playerstats']['th_totalprofit'] = 'Total Profit';
 $lang['topBoxes']['head']['name'] = 'Name';
 $lang['topBoxes']['head']['money'] = 'Money';
 $lang['topBoxes']['head']['mail'] = 'Mail';
+$lang['topBoxes']['head']['dateformat'] = 'jS M Y H:i:s';
 $lang['topBoxes']['link']['home'] = 'Home';
 $lang['topBoxes']['link']['myitems'] = 'My Items';
 $lang['topBoxes']['link']['myauctions'] = 'My Auctions';

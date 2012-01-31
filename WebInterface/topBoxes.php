@@ -33,7 +33,7 @@
 ?>
 <br />
 <?php
-        echo date('jS M Y H:i:s');
+        echo date($lang['topBoxes']['head']['dateformat']);
 ?>
 <br />
         </p>
