@@ -23,8 +23,8 @@
         }
         $item = new Item($itemId);
         $player = new EconAccount($user, $useMySQLiConomy, $iConTableName);
-        $sellPrice = round($_POST['Price'], 2);
-
+        //$sellPrice = round($_POST['Price'], 2);
+        $sellPrice  = $_POST['Price'];
         if (!itemAllowed($item->name, $item->damage)){
                 $_SESSION['error'] = $item->fullname.$lang['newAuction']['item_not_allowed'];
                 header("Location: ../myauctions.php");

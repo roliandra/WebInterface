@@ -53,7 +53,7 @@ $lang['index']['msg_loading'] = 'Lade Daten...';
 $lang['info']['pagetitle'] = 'Web Auction';
 $lang['info']['subtitle'] = 'Wareninformationen';
 $lang['info']['th_item'] = 'Ware';
-$lang['info']['th_numbersold'] = 'Number Sold';
+$lang['info']['th_numbersold'] = 'verkaufte Menge';
 $lang['info']['th_marketprice'] = 'Marktpreis';
 $lang['info']['th_valuegraph'] = 'Preisentwicklung';
 $lang['info']['btn_valuegraph'] = 'Zeige Grafik';
@@ -63,7 +63,7 @@ $lang['login']['pagetitle'] = 'Web Auction';
 $lang['login']['subtitle'] = 'Anmeldung';
 $lang['login']['loginfailed'] = "Anmeldung fehlgeschlagen.";
 $lang['login']['form_username'] = 'Spielername';
-$lang['login']['form_password'] = 'Passwort';
+$lang['login']['form_password'] = 'Passwort&nbsp;&nbsp;&nbsp;&nbsp;';
 $lang['login']['form_submit'] = 'Anmelden';
 
 
