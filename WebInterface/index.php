@@ -38,10 +38,10 @@
     <script type="text/javascript" language="javascript" src="js/inputfunc.js"></script>
     <script type="text/javascript" charset="utf-8">
       $(document).ready(function() {
-        "oLanguage": {
-              "sUrl": "languages/datatables.<?php echo $language; ?>.txt"
-        },
         oTable = $('#mainTable').dataTable({
+          "oLanguage": {
+              "sUrl": "languages/datatables.<?php echo $language; ?>.txt"
+          },
           "bProcessing"     : true,
           "bJQueryUI"       : true,
           "bStateSave"      : true,
