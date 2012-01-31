@@ -226,7 +226,7 @@
                         if ($quantity == 0){
                                 $row[] = "Never";
                         }else{
-                                $row[] = date('jS M Y H:i:s', $timeCreated + $auctionDurationSec);
+                                $row[] = date($lang['topBoxes']['head']['dateformat'], $timeCreated + $auctionDurationSec);
                         }
                         $row[] = $aRow[ $aColumns[3] ];
                         $row[] = $aRow[ $aColumns[4] ];

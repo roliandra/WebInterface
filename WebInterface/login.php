@@ -27,7 +27,7 @@
         <form action="scripts/login-script.php" method="post" name="login">
           <label><?php echo $lang['login']['form_username']; ?></label><input name="Username" type="text" class="input" size="30" /><br />
           <label><?php echo $lang['login']['form_password']; ?></label><input name="Password" type="password" class="input" size="30" /><br />
-          <label>&nbsp;</label><input name="<?php echo $lang['login']['form_submit']; ?>Submit" type="submit" class="button" />
+          <label>&nbsp;</label><input name="<?php echo $lang['login']['form_submit']; ?>" type="submit" class="button" />
         </form>
       </div>
     </div>

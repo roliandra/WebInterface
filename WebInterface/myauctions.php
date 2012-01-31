@@ -106,7 +106,7 @@
 ?>
                                 </p>
                                 </td></tr>
-                                <tr><td><label><?php echo $lang['myauctions']['form_quantity']; ?>Quantity</label></td><td><input name="Quantity" type="text" class="input" size="10" /></td></tr>
+                                <tr><td><label><?php echo $lang['myauctions']['form_quantity']; ?></label></td><td><input name="Quantity" type="text" class="input" size="10" /></td></tr>
                                 <tr><td><label><?php echo $lang['myauctions']['form_price']; ?></label></td><td><input name="Price" type="text" class="input" size="10" /></td></tr>
                                 <!--<tr><td colspan="2" style="text-align:center;"><p>Leave starting bid blank to disable bidding</p></td></tr>
                                 <tr><td><label>Starting Bid (Per Item)</label></td><td><input name="MinBid" type="text" class="input" size="10" /></td></tr> -->
