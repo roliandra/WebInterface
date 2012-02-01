@@ -234,7 +234,11 @@
                         $row[] = $marketPercent;
 
                         if ($canBuy == true){
-                                $row[] = "<form action='scripts/purchaseItem.php' method='post'><input type='text' name='Quantity' onKeyPress='return numbersonly(this, event)' class='input'><input type='hidden' name='ID' value='".$aRow[ $aColumns[5] ]."' /><input type='submit' value='".$lang['server_processing']['form_buy']."' class='button' /></form>";
+                                if ( $aRow[ $aColumns[4] ] >= 0.01) {
+                                    $row[] = "<form action='scripts/purchaseItem.php' method='post'><input type='text' name='Quantity' onKeyPress='return numbersonly(this, event)' class='input'><input type='hidden' name='ID' value='".$aRow[ $aColumns[5] ]."' /><input type='submit' value='".$lang['server_processing']['form_buy']."' class='button' /></form>";
+                                } else {
+                                    $row[] = "<form action='scripts/purchaseItem.php' method='post'><input type='hidden' name='Quantity' value='". $aRow[ $aColumns[3] ]."' /><input type='hidden' name='ID' value='".$aRow[ $aColumns[5] ]."' /><input type='submit' value='".$lang['server_processing']['form_buy']."' class='button' /></form>";
+                                }
                         }else{
                                 $row[] = $lang['server_processing']['form_nobuy'];
                         }
