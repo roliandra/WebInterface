@@ -73,6 +73,7 @@ $lang['myauctions']['form_item'] = 'Ware';
 $lang['myauctions']['form_infinit_msg'] = "Gebe 0 f&uuml;r eine unendliche Mengenangabenanzahl ein (Nur Admins)";
 $lang['myauctions']['form_quantity'] = 'Menge';
 $lang['myauctions']['form_price'] = 'Preis (pro St&uuml;ck)';
+$lang['myauctions']['form_stackprice'] = 'Preis (pro Menge)';
 $lang['myauctions']['form_submit'] = 'Angebot erstellen';
 $lang['myauctions']['subtitle'] = 'Meine Angebote';
 $lang['myauctions']['th_iteminfo'] = 'Ware';

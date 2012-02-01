@@ -73,6 +73,7 @@ $lang['myauctions']['form_item'] = 'Item';
 $lang['myauctions']['form_infinit_msg'] = "Enter 0 as the quantity for infinite stacks (admins only)";
 $lang['myauctions']['form_quantity'] = 'Quantity';
 $lang['myauctions']['form_price'] = 'Price (Per Item)';
+$lang['myauctions']['form_stackprice'] = 'Price (Per Quantity)';
 $lang['myauctions']['form_submit'] = 'Submit';
 $lang['myauctions']['subtitle'] = 'My Auctions';
 $lang['myauctions']['th_iteminfo'] = 'Item';
