@@ -39,7 +39,8 @@
         $buyQuantity = $auction->quantity;
     }
         $toDelete = false;
-    $totalPrice = round($auction->price*$buyQuantity, 2);
+        $totalPrice = round($auction->price*$buyQuantity, 2);
+
         $numberLeft = $auction->quantity-$buyQuantity;
 
         if (($numberLeft < 0)&&($auction->quantity > 0)){
@@ -47,7 +48,10 @@
                 header("Location: ../index.php");
         }
         else{
-
+        if ($totalPrice < 0.01) {
+              $_SESSION['error'] = $lang['purchaseItem']['too_low_minprice'];
+                header("Location: ../index.php");
+        }
         if ($player->money >= $totalPrice){
                 if ($user != $auction->owner){
                         $timeNow = time();
