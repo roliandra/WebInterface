@@ -55,6 +55,9 @@
                                         ]
                                 });
                                 oTable = $('#example2').dataTable({
+                                        "oLanguage": {
+                                            "sUrl": "languages/datatables.<?php echo $language; ?>.txt"
+                                        },                                	
                                         "bJQueryUI": true,
                                         "sPaginationType": "full_numbers",
                                         "aoColumns": [
@@ -84,8 +87,8 @@
                         <th><?php echo $lang['transactionLog']['th_time']; ?></th>
                         <th><?php echo $lang['transactionLog']['th_item']; ?></th>
                         <th><?php echo $lang['transactionLog']['th_seller']; ?></th>
-            <th><?php echo $lang['transactionLog']['th_quantity']; ?></th>
-            <th><?php echo $lang['transactionLog']['th_priceeach']; ?></th>
+            			<th><?php echo $lang['transactionLog']['th_quantity']; ?></th>
+            			<th><?php echo $lang['transactionLog']['th_priceeach']; ?></th>
                         <th><?php echo $lang['transactionLog']['th_pricetotal']; ?></th>
                         <th><?php echo $lang['transactionLog']['th_marketprice']; ?></th>
                 </tr>
@@ -95,7 +98,7 @@
         while(list($id, $name, $damage, $time, $quantity, $price, $seller, $buyer)= mysql_fetch_row($queryMyPurchases))
     {
                 $marketPrice = getMarketPrice($id, 3);
-                $timeFormat = date('jS M Y H:i:s', $time);
+                $timeFormat = date($lang['tables']['dateformat'], $time);
 
                 if ($marketPrice > 0)
                 {
@@ -155,8 +158,8 @@
                         <th><?php echo $lang['transactionLog']['th_date']; ?></th>
                         <th><?php echo $lang['transactionLog']['th_item']; ?></th>
                         <th><?php echo $lang['transactionLog']['th_buyer']; ?></th>
-            <th><?php echo $lang['transactionLog']['th_quantity']; ?></th>
-            <th><?php echo $lang['transactionLog']['th_priceeach']; ?></th>
+            			<th><?php echo $lang['transactionLog']['th_quantity']; ?></th>
+            			<th><?php echo $lang['transactionLog']['th_priceeach']; ?></th>
                         <th><?php echo $lang['transactionLog']['th_pricetotal']; ?></th>
                         <th><?php echo $lang['transactionLog']['th_marketprice']; ?></th>
                 </tr>
@@ -166,7 +169,7 @@
         while(list($id, $name, $damage, $time, $quantity, $price, $seller, $buyer)= mysql_fetch_row($queryMySales))
     {
                 $marketPrice = getMarketPrice($id, 3);
-                $timeFormat = date('jS M Y H:i:s', $time);
+                $timeFormat = date($lang['tables']['dateformat'], $time);
                 if ($marketPrice > 0)
                 {
                         $marketPercent = round((($price/$marketPrice)*100), 1);
