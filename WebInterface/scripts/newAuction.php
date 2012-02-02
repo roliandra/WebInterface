@@ -23,8 +23,10 @@
         }
         $item = new Item($itemId);
         $player = new EconAccount($user, $useMySQLiConomy, $iConTableName);
-        //$sellPrice = round($_POST['Price'], 2);
-        $sellPrice  = $_POST['Price'];
+
+        $sellPrice = round($_POST['Price'], 2);
+        $sellPricePerQuantity = round($_POST['Stackprice'], 2);
+
         if (!itemAllowed($item->name, $item->damage)){
                 $_SESSION['error'] = $item->fullname.$lang['newAuction']['item_not_allowed'];
                 header("Location: ../myauctions.php");
@@ -33,14 +35,22 @@
         if ($sellPrice > $maxSellPrice){ $sellPrice == $maxSellPrice; }
         $sellQuantity = floor($_POST['Quantity']);
         //echo is_numeric($sellQuantity);
-    if ($sellQuantity < 0){
+        if ($sellQuantity < 0){
                 $_SESSION['error'] = $lang['newAuction']['invalid_quantity'];
                 header("Location: ../myauctions.php");
         }
-        if ($sellPrice <= 0)
+
+        if ($sellPricePerQuantity > 0) {
+            $sellPrice = $sellPricePerQuantity / $sellQuantity;
+        }
+        if ($sellPrice <= 0 && $sellPricePerQuantity <= 0)
         {
                 $_SESSION['error'] = $lang['newAuction']['invalid_price'];
                 header("Location: ../myauctions.php");
+        }
+        elseif ($sellPrice > 0 && $sellPricePerQuantity > 0){
+            $_SESSION['error'] = $lang['newAuction']['two_prices_given'];
+            header("Location: ../myauctions.php");
         }
         else{
                 if (is_numeric($sellPrice)){
@@ -84,11 +94,14 @@
                                                                 $updateEnch = mysql_query("INSERT INTO WA_EnchantLinks (enchId, itemTableId, itemId) VALUES ('$enchIdk', '1', '$latestId')");
                                                         }
 
-                                                        $_SESSION['success'] = $lang['newAuction']['success'];
+                                                        $_SESSION['success'] = str_replace(
+                                                                           array('#sellQuantity#','#itemFullName#','#sellPrice#','#itemFee#'),
+                                                                           array($sellQuantity,$itemFullName,$currencyPrefix.$sellPrice.$currencyPostfix,$currencyPrefix.$itemFee.$currencyPostfix),
+                                                                           $lang['newAuction']['success']);
                                                         header("Location: ../myauctions.php");
                                                 }else
                                                 {
-                                                $_SESSION['error'] = $lang['newAuction']['error'];
+                                                $_SESSION['error'] = str_replace('#itemFee#',$currencyPrefix.$itemFee.$currencyPostfix,$lang['newAuction']['error']);
                                                 header("Location: ../myauctions.php");
                                                 }
                                         }else{

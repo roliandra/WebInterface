@@ -16,6 +16,7 @@ $lang['newAuction']['error'] =  "Fee cost #itemFee#, you did not have enough mon
 $lang['newAuction']['quantity_no_int'] = 'Quantity was not an integer.';
 $lang['newAuction']['not_enough_item'] = 'You do not have enough of that item.';
 $lang['newAuction']['price_no_int'] = 'Price was not an integer.';
+$lang['newAuction']['two_prices_given'] = 'Two prices are not allowed to create an offer. Please choose only one.';
 
 
 $lang['purchaseItem']['no_buy'] = 'You do not have permission to buy that.';
@@ -133,4 +134,6 @@ $lang['transactionLog']['th_marketprice'] = '% of Market Price';
 $lang['transactionLog']['th_date'] = 'Date';
 $lang['transactionLog']['th_buyer'] = 'Buyer';
 
+//common fields related to tables 
+$lang['tables']['dateformat'] = 'jS M Y H:i:s';
 ?>

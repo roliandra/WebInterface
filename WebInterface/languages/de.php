@@ -16,7 +16,7 @@ $lang['newAuction']['error'] =  "Geb&uuml;hrenbetrag #itemFee#, du verf&uuml;gst
 $lang['newAuction']['quantity_no_int'] = 'Mengenangabe war nicht ganzzahlig.';
 $lang['newAuction']['not_enough_item'] = 'Es stehen nicht so viele dieser Wareneinheiten zur Verf&uuml;gung.';
 $lang['newAuction']['price_no_int'] = 'Preisangabe war nicht ganzzahlig';
-
+$lang['newAuction']['two_prices_given'] = 'Es sind keine zwei Preisangaben zul&auml;ssig. Bitte nur eine verwenden.';
 
 $lang['purchaseItem']['no_buy'] = 'Es fehlt die Erlaubnis dieses zu erwerben.';
 $lang['purchaseItem']['insufficient_quantity'] = "Bitte eine Mengenangabe gr&ouml;&szlig;er 0 treffen.";
@@ -133,4 +133,6 @@ $lang['transactionLog']['th_marketprice'] = '% des Marktpreises';
 $lang['transactionLog']['th_date'] = 'Datum';
 $lang['transactionLog']['th_buyer'] = 'K&auml;ufer';
 
+//common fields related to tables 
+$lang['tables']['dateformat'] = 'd.m.Y - H:i';
 ?>
