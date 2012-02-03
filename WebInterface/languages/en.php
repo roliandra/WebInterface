@@ -119,6 +119,7 @@ $lang['topBoxes']['link']['playerstats'] = 'Player Stats';
 $lang['topBoxes']['link']['iteminfo'] = 'Item Info';
 $lang['topBoxes']['link']['transactionlog'] = 'Transaction Log';
 $lang['topBoxes']['link']['logout'] = 'logout';
+$lang['topBoxes']['link']['help'] = '<h4>Help</h4>';
 
 
 $lang['transactionLog']['pagetitle'] = 'Web Auction';

@@ -18,6 +18,7 @@ $lang['newAuction']['not_enough_item'] = 'Es stehen nicht so viele dieser Warene
 $lang['newAuction']['price_no_int'] = 'Preisangabe war nicht ganzzahlig';
 $lang['newAuction']['two_prices_given'] = 'Es sind keine zwei Preisangaben zul&auml;ssig. Bitte nur eine verwenden.';
 
+
 $lang['purchaseItem']['no_buy'] = 'Es fehlt die Erlaubnis dieses zu erwerben.';
 $lang['purchaseItem']['insufficient_quantity'] = "Bitte eine Mengenangabe gr&ouml;&szlig;er 0 treffen.";
 $lang['purchaseItem']['too_many_quantity'] = "Du versuchst mehr als die verfügbare Menge zu erwerben.";
@@ -118,6 +119,7 @@ $lang['topBoxes']['link']['playerstats'] = 'Spieler Statistiken';
 $lang['topBoxes']['link']['iteminfo'] = 'Wareninformationen';
 $lang['topBoxes']['link']['transactionlog'] = 'Umsatzprotokoll';
 $lang['topBoxes']['link']['logout'] = 'Abmelden';
+$lang['topBoxes']['link']['help'] = '<h4>Hinweise zum WebShop</h4>';
 
 
 $lang['transactionLog']['pagetitle'] = 'Web Auction';
