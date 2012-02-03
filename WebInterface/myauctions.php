@@ -184,7 +184,7 @@
                                                         if ($quantity == 0){
                                                                 echo "Never";
                                                         }else{
-                                                                echo date('jS M Y H:i:s', $timeCreated + $auctionDurationSec);
+                                                                echo date($lang['tables']['dateformat'], $timeCreated + $auctionDurationSec);
                                                         }
 ?>
                                                 </td>

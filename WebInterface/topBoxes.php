@@ -50,5 +50,6 @@
     <a href="info.php"><?php echo $lang['topBoxes']['link']['iteminfo']; ?></a><br />
     <a href="transactionLog.php"><?php echo $lang['topBoxes']['link']['transactionlog']; ?></a><br />
     <a href="logout.php"><?php echo $lang['topBoxes']['link']['logout']; ?></a>
+    <a href="http://www.secretcraft.de/index.php?page=Thread&postID=4307#post4307"><?php echo $lang['topBoxes']['link']['help']; ?></a>
   </p>
 </div>
