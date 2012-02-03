@@ -40,9 +40,6 @@
                 header("Location: ../myauctions.php");
         }
 
-        if ($sellPricePerQuantity > 0) {
-            $sellPrice = $sellPricePerQuantity / $sellQuantity;
-        }
         if ($sellPrice <= 0 && $sellPricePerQuantity <= 0)
         {
                 $_SESSION['error'] = $lang['newAuction']['invalid_price'];
@@ -53,7 +50,10 @@
             header("Location: ../myauctions.php");
         }
         else{
-                if (is_numeric($sellPrice)){
+            if ($sellPricePerQuantity > 0) {
+                $sellPrice = $sellPricePerQuantity / $sellQuantity;
+            }
+            if (is_numeric($sellPrice)){
                         if ((is_numeric($sellQuantity))&&($sellQuantity >= 0)){
                                 $sellQuantity = round($sellQuantity);
                                 if ($item->quantity >= $sellQuantity)
