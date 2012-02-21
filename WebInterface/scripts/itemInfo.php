@@ -11,6 +11,9 @@
 				return false;
 				break;
 			*/
+			case 0:
+				return false;
+				break;
 			default: 
 				return true; 
 				break;

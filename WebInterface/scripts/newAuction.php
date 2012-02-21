@@ -38,16 +38,26 @@
         if ($sellQuantity < 0){
                 $_SESSION['error'] = $lang['newAuction']['invalid_quantity'];
                 header("Location: ../myauctions.php");
+				exit();
+        }
+		
+	if ($user != $item->owner) {
+            $_SESSION['error'] = $lang['newAuction']['no_owner']." (".$player->name." / ".$item->owner." / ".$user.")";
+            
+            header("Location: ../myauctions.php");
+            exit();
         }
 
         if ($sellPrice <= 0 && $sellPricePerQuantity <= 0)
         {
                 $_SESSION['error'] = $lang['newAuction']['invalid_price'];
                 header("Location: ../myauctions.php");
+				exit();
         }
         elseif ($sellPrice > 0 && $sellPricePerQuantity > 0){
-            $_SESSION['error'] = $lang['newAuction']['two_prices_given'];
-            header("Location: ../myauctions.php");
+                $_SESSION['error'] = $lang['newAuction']['two_prices_given'];
+                header("Location: ../myauctions.php");
+			    exit();
         }
         else{
             if ($sellPricePerQuantity > 0) {
